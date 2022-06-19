@@ -20,8 +20,6 @@ export interface ActionType<T = any> {
 }
 
 export default function Reducer(state: StateType, action: ActionType): StateType {
-    console.log("current state:", state);
-    
     switch (action.type) {
         case "like":
             if (state.likes.find(like => like.id === action.data)) {
@@ -31,9 +29,7 @@ export default function Reducer(state: StateType, action: ActionType): StateType
                 const likesRef = ref(db, "likes");
                 const newLikeRef = push(likesRef);
 
-                set(newLikeRef, action.data).then(resp => {
-                    console.log("Like pushed!", resp);
-                });
+                set(newLikeRef, action.data);
 
                 const likes = state.likes.concat([{ key: newLikeRef.key as string, id: action.data }]);
 
@@ -43,18 +39,15 @@ export default function Reducer(state: StateType, action: ActionType): StateType
                 };
             }
         case "unlike":
+            // Unlike a movie
+            
             const like = state.likes.find(like => like.id === action.data);
 
             if (like) {
                 const likeRef = ref(db, `likes/${like.key}`);
 
+                // Remove like from database
                 remove(likeRef);
-
-                // const newLikeRef = push(likesRef);
-
-                // set(newLikeRef, action.data).then(() => {
-                //     console.log("Like pushed!", action.data);
-                // });
 
                 const likes = state.likes.filter(like => like.id !== action.data);
 

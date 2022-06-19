@@ -30,14 +30,8 @@ const Home = () => {
             dispatch({ type: "set-likes", data: likesData });
             dispatch({ type: "set-movies", data: results });
             dispatch({ type: "select-active", data: results[0]?.id });
-
-            console.log("data:", movieData);
-            console.log("there was a change:", state)
-            console.log("there was a change:", results)
         });
     }, [dispatch]);
-
-    console.log('home rerender!', state)
 
     return (
         <>

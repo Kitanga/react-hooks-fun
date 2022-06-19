@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+/* General Wrapper Styles */
+
+html, body {
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: black;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.general-padding {
+  padding: 0.5rem 0.75rem;
+}
+
+/* END General Wrapper Styles */
+
+/* Preloader Styles */
+
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-
-@keyframes App-logo-spin {
-  from {
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+
+/* END Preloader Styles */
+
+/* Navigation Styles */
+nav a.navbar-item:hover,
+nav a.navbar-item:active,
+nav a.navbar-item:focus {
+  background-color: transparent;
+  color: white;
+}
+/* END Navigation Styles */
+
+/* Movie list */
+
+.home-container {
+  width: 100%;
+} 
+
+.movie-list {
+  width: 100%;
+  overflow-y: auto;
+  /* Foreground, Background */
+  scrollbar-color: white transparent;
+  scrollbar-width: thin;
+  touch-action: none;
+}
+
+.movie-list::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+}
+
+.movie-list::-webkit-scrollbar-thumb { /* Foreground */
+  background: white;
+  border-radius: 20px;
+}
+
+.movie-list::-webkit-scrollbar-track { /* Background */
+  background: transparent;
+}
+
+.movie-item {
+  /* background-color: yellow; */
+  cursor: pointer;
+  color: #000;
+  padding: 1rem;
+}
+
+.movie-item.is-one-fifth {
+  width: 10%;
+}
+
+/* END Movie list */
+
+/* Page Navigation */
+
+.page-changer:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* END Page Navigation */
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu,
+  .navbar-menu .navbar-item {
+    background-color: black;
+    color: white;
+    box-shadow: none;
   }
 }

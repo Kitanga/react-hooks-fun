@@ -3,7 +3,7 @@ import Preloader from "../components/Preloader";
 import getLikes from "../fetchers/getLikes";
 import getMovieDetails from "../fetchers/getMovieDetails";
 import useCurrentState from "../models/hooks/useCurrentState";
-import MovieItem, { IMovieItem } from "./MovieItem";
+import MovieItem, { IMovieItem } from "../components/MovieItem";
 
 const Liked = () => {
     // FIXME: this is a hack

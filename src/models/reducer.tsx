@@ -1,5 +1,5 @@
 import { getDatabase, ref, child, get, push, set, query, equalTo, remove } from "firebase/database";
-import { IMovieItem } from "../routes/MovieItem";
+import { IMovieItem } from "../components/MovieItem";
 import { db } from "../firebase";
 
 export interface ILike {

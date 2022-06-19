@@ -1,5 +1,5 @@
 import useCurrentState from "./useCurrentState";
-import { IMovieItem } from "../../routes/MovieItem";
+import { IMovieItem } from "../../components/MovieItem";
 
 export default function useCurrentMovie(): IMovieItem {
     const [state] = useCurrentState();

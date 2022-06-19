@@ -5,7 +5,7 @@ import Preloader from "../components/Preloader";
 import { db } from "../firebase";
 import useCurrentState from "../models/hooks/useCurrentState";
 import getLikes from "../fetchers/getLikes";
-import { IMovieItem } from "./MovieItem";
+import { IMovieItem } from "../components/MovieItem";
 import getPopularMovies from "../fetchers/getPopularMovies";
 import { ILike } from "../models/reducer";
 

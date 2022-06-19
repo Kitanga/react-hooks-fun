@@ -1,5 +1,5 @@
 import useCurrentState from "../models/hooks/useCurrentState";
-import MovieItem from "../routes/MovieItem";
+import MovieItem from "./MovieItem";
 
 export default function HomeMovieList() {
     const [state, dispatch] = useCurrentState();

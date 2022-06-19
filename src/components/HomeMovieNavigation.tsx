@@ -1,7 +1,7 @@
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useCurrentState from "../models/hooks/useCurrentState";
-import MovieItem, { IMovieItem } from "../routes/MovieItem";
+import MovieItem, { IMovieItem } from "./MovieItem";
 import HomeMovieList from "./HomeMovieList";
 import HomeMovieTitle from "./HomeMovieTitle";
 
